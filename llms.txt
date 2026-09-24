@@ -1,0 +1,28 @@
+# Jérémie Masikoti
+
+> Jérémie Masikoti est ingénieur en informatique basé à Kinshasa (République démocratique du Congo), spécialisé en intelligence artificielle, data science et traitement automatique du langage (TAL). Il suit un Master en Intelligence Artificielle et Data Science à l'Université de Kinshasa.
+
+Également écrit : Jeremie Masikoti, Jeremiah Masikoti, J. Masikoti.
+
+## Métier et compétences
+- Data science et machine learning : Python, pandas, scikit-learn, TensorFlow, Jupyter
+- Traitement automatique du langage : spaCy, BERT, analyse de corpus francophones
+- Développement : Python, Django, JavaScript (dont animations web), HTML/CSS, Java, C#, applications desktop (CustomTkinter)
+- Bases de données : conception et administration (MySQL, SQL Server, Oracle, SQLite)
+- Cybersécurité : Wireshark, Linux, notions de Splunk ; certificat Google Cybersecurity
+
+## Articles
+- [Detecting and Localizing Generated Segments in French-Language Hybrid Texts through Within-Document Variance of Linguistic Features](https://jeremie-masikoti.netlify.app/articles/detection-segments-generes-ia/) — Masikoti, J. (2026), prépublication, Zenodo. DOI : 10.5281/zenodo.22937728
+
+## Projets
+- Détection et localisation de segments générés par IA dans des textes hybrides en français (mémoire de Master, 2026)
+- Générateur de modèles Entité-Association à partir de textes en français (spaCy, BERT, NetworkX, 2025)
+- Simulation d'un marché multi-agents (GAMA/GAML, 2026)
+- Base de données et application de gestion des stocks pour la Direction Générale des Recettes de Kinshasa (2024)
+
+## Liens officiels
+- [Portfolio](https://jeremie-masikoti.netlify.app/)
+- [GitHub](https://github.com/Vermoge)
+- [LinkedIn](https://www.linkedin.com/in/j%C3%A9r%C3%A9mie-masikoti-41a917293/)
+- [ORCID](https://orcid.org/0009-0005-4453-9758)
+- [Instagram](https://www.instagram.com/jeremiah_masikoti/)

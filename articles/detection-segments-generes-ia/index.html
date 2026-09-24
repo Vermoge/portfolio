@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Détection de segments générés par IA dans des textes hybrides en français — Jérémie Masikoti</title>
+<meta name="description" content="Article de Jérémie Masikoti (2026) : détecter et localiser les passages générés par IA dans des textes hybrides en français grâce à la variance intra-document des traits linguistiques. Prépublication Zenodo, DOI 10.5281/zenodo.22937728.">
+<meta name="author" content="Jérémie Masikoti">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeremie-masikoti.netlify.app/articles/detection-segments-generes-ia/">
+
+<!-- Balises lues par Google Scholar -->
+<meta name="citation_title" content="Detecting and Localizing Generated Segments in French-Language Hybrid Texts through Within-Document Variance of Linguistic Features">
+<meta name="citation_author" content="Masikoti, Jérémie">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_doi" content="10.5281/zenodo.22937728">
+<meta name="citation_technical_report_institution" content="Université de Kinshasa">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="AI-generated text detection; hybrid texts; French; linguistic features; natural language processing">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeremie-masikoti.netlify.app/articles/detection-segments-generes-ia/">
+<meta property="og:title" content="Détecter les passages écrits par une IA dans un texte en français">
+<meta property="og:description" content="Article de Jérémie Masikoti (2026), prépublication Zenodo.">
+<meta property="og:locale" content="fr_FR">
+<meta property="article:author" content="Jérémie Masikoti">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Detecting and Localizing Generated Segments in French-Language Hybrid Texts through Within-Document Variance of Linguistic Features",
+  "alternativeHeadline": "Détection et localisation de segments générés dans des textes hybrides francophones par la variance intra-document des traits linguistiques",
+  "author": {
+    "@type": "Person",
+    "@id": "https://jeremie-masikoti.netlify.app/#person",
+    "name": "Jérémie Masikoti",
+    "url": "https://jeremie-masikoti.netlify.app/",
+    "sameAs": ["https://orcid.org/0009-0005-4453-9758", "https://github.com/Vermoge", "https://www.linkedin.com/in/j%C3%A9r%C3%A9mie-masikoti-41a917293/"]
+  },
+  "datePublished": "2026",
+  "inLanguage": "en",
+  "publisher": { "@type": "Organization", "name": "Zenodo" },
+  "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.22937728" },
+  "sameAs": "https://doi.org/10.5281/zenodo.22937728",
+  "url": "https://jeremie-masikoti.netlify.app/articles/detection-segments-generes-ia/",
+  "keywords": ["détection de texte généré par IA", "textes hybrides", "français", "traits linguistiques", "traitement automatique du langage"],
+  "about": ["Intelligence artificielle", "Traitement automatique du langage", "Détection de contenus générés"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav-simple">
+    <a class="mark" href="../../">JM<span>.</span></a>
+    <ul>
+      <li><a href="../../#recherche">Articles</a></li>
+      <li><a href="../../">Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <article class="article">
+    <header class="article-head">
+      <span class="label">Article scientifique · prépublication · 2026</span>
+      <h1 class="article-title">Détecter les passages écrits par une IA dans un texte en français</h1>
+      <p class="article-orig" lang="en">Detecting and Localizing Generated Segments in French-Language Hybrid Texts through Within-Document Variance of Linguistic Features</p>
+      <dl class="article-meta">
+        <div><dt>Auteur</dt><dd><a href="../../">Jérémie Masikoti</a></dd></div>
+        <div><dt>Année</dt><dd>2026</dd></div>
+        <div><dt>Publié sur</dt><dd>Zenodo (prépublication)</dd></div>
+        <div><dt>DOI</dt><dd><a href="https://doi.org/10.5281/zenodo.22937728" target="_blank" rel="noopener">10.5281/zenodo.22937728</a></dd></div>
+      </dl>
+      <div class="btns">
+        <a class="btn primary" href="https://doi.org/10.5281/zenodo.22937728" target="_blank" rel="noopener">Lire l’article sur Zenodo ↗</a>
+        <a class="btn" href="https://orcid.org/0009-0005-4453-9758" target="_blank" rel="noopener">Profil ORCID ↗</a>
+      </div>
+    </header>
+
+    <div class="article-body">
+      <h2>En bref</h2>
+      <p>Les textes que l’on lit aujourd’hui sont de plus en plus souvent <strong>hybrides</strong> : une personne écrit une partie, puis un outil d’intelligence artificielle en rédige une autre. Savoir si un texte « contient de l’IA » ne suffit plus — il faut savoir <strong>où</strong>.</p>
+      <p>Cet article, issu de mon mémoire de Master en Intelligence Artificielle et Data Science à l’Université de Kinshasa, propose une méthode pour <strong>détecter et localiser les segments générés par IA</strong> dans des textes en français. L’idée : dans un même document, les traits linguistiques (vocabulaire, longueur des phrases, structure…) ne varient pas de la même façon dans les passages humains et dans les passages générés. Mesurer cette <strong>variance intra-document</strong> permet de repérer les ruptures.</p>
+
+      <h2>Démarche</h2>
+      <ul>
+        <li>Constitution et annotation de corpus de textes <strong>humains</strong>, <strong>générés par IA</strong> et <strong>hybrides</strong> en français.</li>
+        <li>Segmentation des textes et extraction de traits linguistiques.</li>
+        <li>Modèles de classification et de régression pour détecter et localiser les segments générés.</li>
+        <li>Évaluation par F1, AUC et métriques de localisation.</li>
+      </ul>
+
+      <h2>Mots-clés</h2>
+      <ul class="kw">
+        <li>Détection de texte généré par IA</li><li>Textes hybrides</li><li>Français</li><li>Traits linguistiques</li><li>Traitement automatique du langage</li><li>Machine learning</li>
+      </ul>
+
+      <h2>Citer cet article</h2>
+      <pre class="cite" id="cite-apa">Masikoti, J. (2026). Detecting and Localizing Generated Segments in French-Language Hybrid Texts through Within-Document Variance of Linguistic Features [Prépublication]. Zenodo. https://doi.org/10.5281/zenodo.22937728</pre>
+      <pre class="cite">@misc{masikoti2026detecting,
+  author    = {Masikoti, Jérémie},
+  title     = {Detecting and Localizing Generated Segments in French-Language
+               Hybrid Texts through Within-Document Variance of Linguistic Features},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22937728},
+  note      = {Preprint}
+}</pre>
+
+      <h2>À propos de l’auteur</h2>
+      <p><strong>Jérémie Masikoti</strong> est ingénieur en informatique à Kinshasa (RDC), en Master Intelligence Artificielle et Data Science à l’Université de Kinshasa. Ses travaux portent sur la détection de contenus générés par IA, l’analyse de corpus francophones et la modélisation de données. <a href="../../">Voir son portfolio →</a></p>
+    </div>
+  </article>
+
+  <footer>
+    <span class="label">© 2026 Jérémie Masikoti · Kinshasa</span>
+    <a class="label" href="../../">← Retour au portfolio</a>
+  </footer>
+</div>
+</body>
+</html>
