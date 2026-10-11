@@ -26,7 +26,7 @@
       "name": "Jérémie Masikoti",
       "alternateName": ["Jeremie Masikoti", "Jeremiah Masikoti", "J. Masikoti"],
       "url": "https://jeremie-masikoti.netlify.app/",
-      "jobTitle": "Ingénieur en informatique — IA & Data Science",
+      "jobTitle": "Ingénieur en informatique — IA & Data Science, étudiant en Master 2",
       "address": { "@type": "PostalAddress", "addressLocality": "Kinshasa", "addressCountry": "CD" },
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "Université de Kinshasa" },
       "knowsAbout": ["Intelligence artificielle", "Data science", "Machine learning", "Traitement automatique du langage", "Python", "Django", "Bases de données", "Cybersécurité"],
@@ -61,67 +61,106 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="css/style.css">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300..900&family=Familjen+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<link rel="stylesheet" href="css/creatif.css">
 </head>
 <body>
 <div class="wrap">
   <nav>
-    <a class="mark" href="#top">JM<span>.</span></a>
-    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="bars" aria-hidden="true"></span>Menu</button>
-    <ul id="menu">
-      <li><a href="#recherche">Articles</a></li>
+    <a class="mark" href="#top" aria-label="Retour en haut">JM<i>.</i></a>
+    <ul>
+      <li><a href="#recherche">Recherche</a></li>
       <li><a href="#projets">Projets</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#parcours">Parcours</a></li>
+      <li class="opt"><a href="#parcours">Parcours</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <header class="hero" id="top">
-    <div>
-      <span class="status"><span class="dot" aria-hidden="true"></span>Master IA &amp; Data Science · en cours</span>
-      <h1>Jérémie<br><span class="outline">Masikoti</span></h1>
-      <p class="role-line" aria-live="polite"><span class="label" style="text-transform:none;letter-spacing:0">&gt;</span> <span class="typed" id="typed">data scientist</span><span class="caret" aria-hidden="true"></span></p>
-      <p class="lede">Ingénieur en informatique à Kinshasa, spécialisé en IA et data science. Je conçois des <mark>solutions intelligentes</mark> avec Python, le machine learning et le traitement automatique du langage — de la donnée brute jusqu’à l’application qui l’utilise.</p>
-      <div class="btns">
-        <a class="btn primary" href="#projets">Voir mes projets ↓</a>
-        <a class="btn" href="https://github.com/Vermoge" target="_blank" rel="noopener">GitHub ↗</a>
+    <div class="meta label">
+      <span><span class="dot" aria-hidden="true"></span>Master 2 IA &amp; Data Science · UNIKIN</span>
+      <span>Kinshasa, RDC · <span id="clock">WAT</span></span>
+    </div>
+
+    <div class="name-box">
+      <h1 class="name" id="name" aria-label="Jérémie Masikoti">
+        <span class="row" aria-hidden="true">Jérémie</span>
+        <span class="row" aria-hidden="true">Masikoti</span>
+      </h1>
+      <div class="name-hint label"><span>Data · TAL · Web</span><span id="hint">Survolez le nom</span></div>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <p class="role" aria-live="polite"><span class="label" style="text-transform:none;letter-spacing:0">&gt;</span> <span class="typed" id="typed">data scientist</span><span class="caret" aria-hidden="true"></span></p>
+        <p class="lede" id="lede">Ingénieur en informatique. Je conçois des <mark>solutions intelligentes</mark> avec Python, le machine learning et le traitement automatique du langage, de la donnée brute jusqu’à l’application qui l’utilise.</p>
+        <div class="btns">
+          <a class="btn solid" href="#projets">Voir mes projets ↓</a>
+          <a class="btn" href="https://github.com/Vermoge" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <aside class="readout" aria-label="Analyse stylistique du paragraphe de présentation">
+        <div class="readout-head label"><span>Analyse du paragraphe</span><span>variance par phrase</span></div>
+        <canvas class="seis" id="seis" aria-hidden="true"></canvas>
+        <div class="score">
+          <div><span class="label">Score IA</span><br><b id="score">0,00</b></div>
+          <div class="verdict mono">Écrit par un humain.<br><span class="label">Aucune rupture détectée</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="netpanel" id="netpanel">
+      <div class="net-top">
+        <h2 class="net-title">Un réseau qui lit, phrase par phrase</h2>
+        <button class="net-btn" id="netfire" type="button">Envoyer la phrase suivante →</button>
+      </div>
+      <canvas id="net" role="img" aria-label="Animation interactive : un réseau de neurones reçoit les mots d’une phrase et la classe comme humaine ou générée par IA"></canvas>
+      <div class="net-bot label">
+        <span id="netstate" aria-live="polite">—</span>
+        <span><span class="net-key"><b style="background:var(--net-human)"></b>humain</span> &nbsp; <span class="net-key"><b style="background:var(--net-ai)"></b>généré</span></span>
       </div>
     </div>
-    <div class="net-card" aria-label="Animation : réseau de neurones qui propage un signal">
-      <canvas id="net"></canvas>
-      <div class="net-legend label"><span>entrée</span><span>couches cachées</span><span>sortie</span></div>
-    </div>
-    <dl class="facts">
-      <div><dt>Basé à</dt><dd>Kinshasa, RDC</dd></div>
-      <div><dt>Heure locale</dt><dd id="clock">—</dd></div>
-      <div><dt>Domaine</dt><dd>IA, data, dev, BDD</dd></div>
-      <div><dt>Langues</dt><dd>Français, anglais, lingala</dd></div>
-    </dl>
   </header>
 
+  <div class="band" aria-hidden="true">
+    <div class="band-track">
+      <span>Machine learning<em>✦</em>Traitement du langage<em>✦</em>Python &amp; Django<em>✦</em>Bases de données<em>✦</em>Cybersécurité<em>✦</em>Kinshasa<em>✦</em></span>
+      <span>Machine learning<em>✦</em>Traitement du langage<em>✦</em>Python &amp; Django<em>✦</em>Bases de données<em>✦</em>Cybersécurité<em>✦</em>Kinshasa<em>✦</em></span>
+    </div>
+  </div>
+
   <section id="recherche">
-    <div class="pub">
+    <div class="sec-head">
+      <h2>Où l’IA a-t-elle <span class="o">écrit</span> ?</h2>
+      <span class="label">Prépublication · 2026</span>
+    </div>
+    <div class="research">
       <div>
-        <span class="label">Article scientifique · prépublication · 2026</span>
-        <h3>Detecting and Localizing Generated Segments in French-Language Hybrid Texts through Within-Document Variance of Linguistic Features</h3>
-        <p>Mon mémoire de Master : repérer, dans un texte en français, les passages écrits par une IA mélangés à du texte humain — en mesurant comment les traits linguistiques varient d’un segment à l’autre.</p>
-        <div class="btns">
-          <a class="btn primary" href="articles/detection-segments-generes-ia/">Lire la présentation de l’article →</a>
-        </div>
-        <p style="margin:16px 0 0"><a class="doi" href="https://doi.org/10.5281/zenodo.22937728" target="_blank" rel="noopener">DOI : 10.5281/zenodo.22937728 ↗</a></p>
+        <span class="label">Mémoire de Master</span>
+        <h3 class="pub-title">Detecting and Localizing Generated Segments in French-Language Hybrid Texts through Within-Document Variance of Linguistic Features</h3>
+        <p>Repérer, dans un texte en français, les passages écrits par une IA mêlés à du texte humain, en mesurant comment les traits linguistiques varient d’un segment à l’autre.</p>
+        <div class="btns" style="margin:0 0 18px"><a class="btn solid" href="articles/detection-segments-generes-ia/">Lire la présentation de l’article →</a></div>
+        <a class="doi" href="https://doi.org/10.5281/zenodo.22937728" target="_blank" rel="noopener">DOI : 10.5281/zenodo.22937728 ↗</a>
       </div>
-      <div class="hybrid" id="hybrid" aria-label="Démonstration : segments humains et générés dans un texte hybride">
-        <p class="hybrid-text">
+      <div class="lab" id="lab">
+        <div class="lab-head">
+          <span class="label">Démonstration · texte hybride</span>
+          <button class="scan-btn" id="scan" type="button">Relancer l’analyse</button>
+        </div>
+        <p class="hybrid-text" id="hybrid">
           <span class="seg h">Le marché de Gambela s’anime dès l’aube, entre les cris des vendeurs et l’odeur du pain chaud. </span><span class="seg h">On y trouve de tout, et surtout du monde. </span><span class="seg a">Ce lieu emblématique constitue un véritable carrefour économique et social, reflétant la richesse culturelle de la région. </span><span class="seg a">Il joue ainsi un rôle essentiel dans la dynamique urbaine. </span><span class="seg h">Moi, j’y vais surtout pour les beignets.</span>
         </p>
+        <span class="beam" id="beam" aria-hidden="true"></span>
         <div class="var-bar" id="varbar" aria-hidden="true"></div>
-        <div class="hybrid-foot label">
-          <span class="key"><b style="background:var(--human)"></b>humain</span>
-          <span class="key"><b style="background:var(--ai)"></b>généré</span>
-          <span id="scanstate">analyse…</span>
+        <div class="lab-foot label">
+          <span><span class="key"><b style="background:var(--human)"></b>humain</span><span class="key"><b style="background:var(--ai)"></b>généré</span></span>
+          <span id="scanstate" aria-live="polite">en attente</span>
         </div>
       </div>
     </div>
@@ -129,108 +168,80 @@
 
   <section id="projets">
     <div class="sec-head">
-      <h2>Projets &amp; recherche</h2>
+      <h2>Projets</h2>
       <span class="label">2021 – 2026</span>
     </div>
-    <div class="projects">
-      <article class="proj">
-        <div class="thumb"><canvas data-anim="segments"></canvas></div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="label">Mémoire · 2026</span><span class="label">IA / TAL</span></div>
-          <h3>Détection de segments générés par IA</h3>
-          <p>Corpus humains, IA et hybrides annotés ; segmentation, extraction de traits, classification et régression. Évaluation par F1, AUC et métriques de localisation.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">scikit-learn</span><span class="tag">BERT</span></div>
-        </div>
-      </article>
-      <article class="proj">
-        <div class="thumb"><canvas data-anim="graph"></canvas></div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="label">Prototype · 2025</span><span class="label">TAL</span></div>
-          <h3>Générateur de modèles Entité-Association</h3>
-          <p>Transforme un texte en français en modèle E-A : extraction d’entités et de relations, lemmatisation, règles linguistiques et visualisation en graphe.</p>
-          <div class="tags"><span class="tag">spaCy</span><span class="tag">BERT</span><span class="tag">NetworkX</span></div>
-        </div>
-      </article>
-      <article class="proj">
-        <div class="thumb"><canvas data-anim="agents"></canvas></div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="label">Académique · 2026</span><span class="label">Simulation</span></div>
-          <h3>Marché multi-agents</h3>
-          <p>Agents acheteurs et vendeurs qui négocient par tours, puis analyse des profits dans un environnement de simulation.</p>
-          <div class="tags"><span class="tag">GAMA</span><span class="tag">GAML</span></div>
-        </div>
-      </article>
-    </div>
 
-    <div class="kind-row"><span class="label">Réalisations</span></div>
-    <div class="projects">
-      <article class="proj">
-        <div class="thumb"><canvas data-anim="stock"></canvas></div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="label">DGRK · 2024</span><span class="label">BDD + desktop</span></div>
-          <h3>Gestion des stocks</h3>
-          <p>Conception de la base de données et d’une application desktop de gestion des stocks pour la Direction Générale des Recettes de Kinshasa.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">CustomTkinter</span><span class="tag">SQL</span></div>
-        </div>
-      </article>
-      <article class="proj">
-        <div class="thumb"><canvas data-anim="site"></canvas></div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="label">Site web · 2023</span><span class="label">Full-stack</span></div>
-          <h3>Église Éternel Mon Refuge</h3>
-          <p>Site web de l’église, développé avec Django et une base SQLite3.</p>
-          <div class="tags"><span class="tag">Django</span><span class="tag">SQLite3</span></div>
-        </div>
-      </article>
-      <article class="proj">
-        <div class="thumb"><canvas data-anim="shop"></canvas></div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="label">E-commerce · 2021–22</span><span class="label">Full-stack</span></div>
-          <h3>ViraSA</h3>
-          <p>Site e-commerce : structure et interactions en HTML, CSS et JavaScript, back-end en Python avec Django.</p>
-          <div class="tags"><span class="tag">Django</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span></div>
-        </div>
-      </article>
-    </div>
+    <p class="group-label label">Recherche</p>
+    <ul class="plist">
+      <li class="prow" data-anim="segments" tabindex="0">
+        <span class="yr label">2026 · IA / TAL</span>
+        <h3>Détection de segments IA</h3>
+        <div class="desc"><p>Corpus humains, IA et hybrides annotés ; segmentation, extraction de traits, classification et régression. Évaluation par F1, AUC et métriques de localisation.</p><div class="tags"><span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">scikit-learn</span><span class="tag">BERT</span></div></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="thumb"><canvas></canvas></div>
+      </li>
+      <li class="prow" data-anim="graph" tabindex="0">
+        <span class="yr label">2025 · TAL</span>
+        <h3>Générateur de modèles E-A</h3>
+        <div class="desc"><p>Transforme un texte en français en modèle entité-association : extraction d’entités et de relations, lemmatisation, règles linguistiques et graphe.</p><div class="tags"><span class="tag">spaCy</span><span class="tag">BERT</span><span class="tag">NetworkX</span></div></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="thumb"><canvas></canvas></div>
+      </li>
+      <li class="prow" data-anim="agents" tabindex="0">
+        <span class="yr label">2026 · Simulation</span>
+        <h3>Marché multi-agents</h3>
+        <div class="desc"><p>Agents acheteurs et vendeurs qui négocient par tours, puis analyse des profits dans un environnement de simulation.</p><div class="tags"><span class="tag">GAMA</span><span class="tag">GAML</span></div></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="thumb"><canvas></canvas></div>
+      </li>
+    </ul>
+
+    <p class="group-label label">Réalisations</p>
+    <ul class="plist">
+      <li class="prow" data-anim="stock" tabindex="0">
+        <span class="yr label">2024 · DGRK</span>
+        <h3>Gestion des stocks</h3>
+        <div class="desc"><p>Base de données et application desktop de gestion des stocks pour la Direction Générale des Recettes de Kinshasa.</p><div class="tags"><span class="tag">Python</span><span class="tag">CustomTkinter</span><span class="tag">SQL</span></div></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="thumb"><canvas></canvas></div>
+      </li>
+      <li class="prow" data-anim="site" tabindex="0">
+        <span class="yr label">2023 · Site web</span>
+        <h3>Église Éternel Mon Refuge</h3>
+        <div class="desc"><p>Site web de l’église, développé avec Django et une base SQLite3.</p><div class="tags"><span class="tag">Django</span><span class="tag">SQLite3</span></div></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="thumb"><canvas></canvas></div>
+      </li>
+      <li class="prow" data-anim="shop" tabindex="0">
+        <span class="yr label">2021–22 · E-commerce</span>
+        <h3>ViraSA</h3>
+        <div class="desc"><p>Site e-commerce : structure et interactions en HTML, CSS et JavaScript, back-end en Python avec Django.</p><div class="tags"><span class="tag">Django</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span></div></div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="thumb"><canvas></canvas></div>
+      </li>
+    </ul>
   </section>
 
   <section id="competences">
-    <div class="sec-head"><h2>Compétences</h2></div>
-    <div class="about">
-      <div class="about-text">
-        <p><strong>Jérémie Masikoti</strong> est ingénieur en informatique à Kinshasa (RDC), spécialisé en intelligence artificielle, data science et traitement automatique du langage.</p>
-        <p>Mes travaux portent sur la détection de contenus générés par IA, l’analyse de corpus francophones et la modélisation de données. J’aime transformer des problèmes complexes en solutions concrètes, fiables et mesurables — et soigner l’interface avec des animations JavaScript.</p>
-        <div class="langs label" style="text-transform:none;letter-spacing:0;font-size:14px">
-          <span>Français</span><div class="meter"><i style="width:100%"></i></div>
-          <span>Lingala</span><div class="meter"><i style="width:75%"></i></div>
-          <span>Anglais</span><div class="meter"><i style="width:55%"></i></div>
+    <div class="sec-head"><h2>Boîte à <span class="o">outils</span></h2></div>
+    <div class="skills-wrap">
+      <div class="intro">
+        <p>Je relie la recherche, les données et le développement logiciel.</p>
+        <p>Mes travaux portent sur la détection de contenus générés par IA, l’analyse de corpus francophones et la modélisation de données. J’aime transformer des problèmes complexes en solutions concrètes, fiables et mesurables, et soigner l’interface avec des animations JavaScript.</p>
+        <div class="langs mono">
+          <span>Français</span><div class="meter"><i style="width:100%"></i></div><span class="label">natif</span>
+          <span>Lingala</span><div class="meter"><i style="width:75%"></i></div><span class="label">courant</span>
+          <span>Anglais</span><div class="meter"><i style="width:55%"></i></div><span class="label">interm.</span>
         </div>
       </div>
       <div class="skills">
-        <div class="skill-group">
-          <h4 class="label">IA &amp; data</h4>
-          <ul><li>Python</li><li>pandas</li><li>scikit-learn</li><li>spaCy</li><li>BERT</li><li>TensorFlow</li><li>Jupyter</li></ul>
-        </div>
-        <div class="skill-group">
-          <h4 class="label">Web &amp; logiciel</h4>
-          <ul><li>Django</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Animations JS</li><li>Java</li><li>C#</li><li>CustomTkinter</li></ul>
-        </div>
-        <div class="skill-group">
-          <h4 class="label">Bases de données</h4>
-          <ul><li>MySQL</li><li>SQL Server</li><li>Oracle</li><li>SQLite</li><li>MySQL Workbench</li></ul>
-        </div>
-        <div class="skill-group">
-          <h4 class="label">Cybersécurité</h4>
-          <ul><li>Wireshark</li><li>Linux</li><li>SQL</li><li>Splunk (notions)</li></ul>
-        </div>
-        <div class="skill-group">
-          <h4 class="label">Collaboration</h4>
-          <ul><li>Git</li><li>GitHub</li><li>VS Code</li><li>Notion</li></ul>
-        </div>
-        <div class="skill-group">
-          <h4 class="label">Recherche</h4>
-          <ul><li>Rédaction scientifique</li><li>Zenodo</li><li>ORCID</li></ul>
-        </div>
+        <div class="sk"><h4 class="label">IA &amp; data</h4><ul><li>Python</li><li>pandas</li><li>scikit-learn</li><li>spaCy</li><li>BERT</li><li>TensorFlow</li><li>Jupyter</li></ul></div>
+        <div class="sk"><h4 class="label">Web &amp; logiciel</h4><ul><li>Django</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Animations JS</li><li>Java</li><li>C#</li><li>CustomTkinter</li></ul></div>
+        <div class="sk"><h4 class="label">Bases de données</h4><ul><li>MySQL</li><li>SQL Server</li><li>Oracle</li><li>SQLite</li><li>MySQL Workbench</li></ul></div>
+        <div class="sk"><h4 class="label">Cybersécurité</h4><ul><li>Wireshark</li><li>Linux</li><li>SQL</li><li>Splunk (notions)</li></ul></div>
+        <div class="sk"><h4 class="label">Collaboration</h4><ul><li>Git</li><li>GitHub</li><li>VS Code</li><li>Notion</li></ul></div>
+        <div class="sk"><h4 class="label">Recherche</h4><ul><li>Rédaction scientifique</li><li>Zenodo</li><li>ORCID</li></ul></div>
       </div>
     </div>
   </section>
@@ -243,27 +254,27 @@
         <ol class="timeline">
           <li><span class="when">2024</span><div><h3>Concepteur de bases de données</h3><span class="org">Direction Générale des Recettes de Kinshasa</span><p>Base de données et application desktop de gestion des stocks.</p></div></li>
           <li><span class="when">2023</span><div><h3>Développeur web</h3><span class="org">Église Éternel Mon Refuge</span><p>Site web avec Django et SQLite3.</p></div></li>
-          <li><span class="when">2021 – 2022</span><div><h3>Agent télécom — SIM &amp; Mobile Money</h3><span class="org">Vodacom RDC</span><p>Création de comptes M-Pesa, ouverture des SIM.</p></div></li>
-          <li><span class="when">2021 – 2022</span><div><h3>Développeur web</h3><span class="org">ViraSA</span><p>Site e-commerce en Django et JavaScript.</p></div></li>
+          <li><span class="when">2021–22</span><div><h3>Agent télécom, SIM &amp; Mobile Money</h3><span class="org">Vodacom RDC</span><p>Création de comptes M-Pesa, ouverture des SIM.</p></div></li>
+          <li><span class="when">2021–22</span><div><h3>Développeur web</h3><span class="org">ViraSA</span><p>Site e-commerce en Django et JavaScript.</p></div></li>
         </ol>
       </div>
       <div>
         <h3 class="label col-title">Formation</h3>
         <ol class="timeline">
-          <li><span class="when now">En cours</span><div><h3>Master IA &amp; Data Science</h3><span class="org">Université de Kinshasa</span></div></li>
+          <li><span class="when now">En cours</span><div><h3>Master 2 IA &amp; Data Science</h3><span class="org">Université de Kinshasa</span></div></li>
           <li><span class="when">2025</span><div><h3>Formation en cybersécurité</h3><span class="org">Orange Digital Center</span></div></li>
           <li><span class="when">2024</span><div><h3>Licence Mathématique et Informatique</h3><span class="org">Université de Kinshasa</span></div></li>
-          <li><span class="when">2019</span><div><h3>Diplôme d’État — Pédagogie générale</h3><span class="org">Collège Saint Théophile</span></div></li>
+          <li><span class="when">2019</span><div><h3>Diplôme d’État, pédagogie générale</h3><span class="org">Collège Saint Théophile</span></div></li>
         </ol>
       </div>
     </div>
 
-    <div class="kind-row"><span class="label">Certifications</span></div>
+    <h3 class="label certs-title">Certifications</h3>
     <ul class="certs">
       <li><a href="https://www.coursera.org/account/accomplishments/records/6OAKMUEMH5BL" target="_blank" rel="noopener">Google Data Analytics ↗</a><span class="label">Certificat professionnel · 2026</span></li>
       <li><span class="t">Google Project Management</span><span class="label">Certificat professionnel · 2026</span></li>
       <li><a href="https://www.credly.com/badges/a01f6977-09fd-4dfc-b5f2-2d580912c29c/linked_in_profile" target="_blank" rel="noopener">Google Cybersecurity ↗</a><span class="label">Certificat professionnel · 2025</span></li>
-      <li><a href="https://www.life-global.org/certificate/0afb860d-22a3-4ac0-a275-10bf6d1e3dc1" target="_blank" rel="noopener">HP LIFE — Sciences et analyse des données ↗</a><span class="label">2025</span></li>
+      <li><a href="https://www.life-global.org/certificate/0afb860d-22a3-4ac0-a275-10bf6d1e3dc1" target="_blank" rel="noopener">HP LIFE, sciences et analyse des données ↗</a><span class="label">2025</span></li>
       <li><span class="t">Azure DevOps Boards · Continuous Delivery &amp; Builds</span><span class="label">Microsoft · 2025</span></li>
       <li><span class="t">Getting Started with Linux Terminal</span><span class="label">2025</span></li>
       <li class="pending"><span class="t">Introduction à l’ingénierie des données</span><span class="label">En cours</span></li>
@@ -272,26 +283,30 @@
   </section>
 
   <section id="contact" class="contact">
-    <span class="label">Contact</span>
-    <h2>Un projet data ou web ? <em>Parlons-en.</em></h2>
-    <div class="mail-row">
-      <span class="mail" id="mail">masikotejeremiah@gmail.com</span>
-      <button class="btn primary" id="copy" type="button">Copier l’adresse</button>
+    <div class="inner">
+      <span class="label">Contact</span>
+      <h2>Un projet data ou web ? <em>Parlons-en.</em></h2>
+      <div class="mail-row">
+        <span class="mail" id="mail">masikotejeremiah@gmail.com</span>
+        <button class="btn" id="copy" type="button">Copier l’adresse</button>
+      </div>
+      <ul class="socials">
+        <li><a href="https://github.com/Vermoge" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9mie-masikoti-41a917293/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://www.instagram.com/jeremiah_masikoti/" target="_blank" rel="noopener">Instagram ↗</a></li>
+        <li><a href="https://orcid.org/0009-0005-4453-9758" target="_blank" rel="noopener">ORCID ↗</a></li>
+      </ul>
+      <footer>
+        <span class="label">© 2026 Jérémie Masikoti · Kinshasa</span>
+        <a class="label" href="#top">Retour en haut ↑</a>
+      </footer>
     </div>
-    <ul class="socials">
-      <li><a href="https://github.com/Vermoge" target="_blank" rel="noopener">GitHub ↗</a></li>
-      <li><a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9mie-masikoti-41a917293/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-      <li><a href="https://www.instagram.com/jeremiah_masikoti/" target="_blank" rel="noopener">Instagram ↗</a></li>
-      <li><a href="https://orcid.org/0009-0005-4453-9758" target="_blank" rel="noopener">ORCID ↗</a></li>
-    </ul>
   </section>
-
-  <footer>
-    <span class="label">© 2026 Jérémie Masikoti · Kinshasa</span>
-    <a class="label" href="#top">Retour en haut ↑</a>
-  </footer>
 </div>
 
-<script src="js/script.js"></script>
+<div class="preview" id="preview" aria-hidden="true"><canvas id="pcanvas"></canvas></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<script src="js/creatif.js"></script>
 </body>
 </html>
